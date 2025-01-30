@@ -1,25 +1,99 @@
-# P6-Full-Stack-reseau-dev
+# 📝 MDD Social Network - Full-Stack Java & Angular  
 
-## Front
+![Angular](https://img.shields.io/badge/Angular-18-%23DD0031?style=&logo=angular&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.0-%236DB33F?style=&logo=springboot&logoColor=green)
+![Java](https://img.shields.io/badge/Java-21-%23ED8B00?style=&logo=openjdk&logoColor=orange)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-%234479A1?style=&logo=mysql&logoColor=blue)
+![RxJS](https://img.shields.io/badge/RxJS-7-%23B7178C?style=&logo=reactivex&logoColor=pink)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+---
 
-Don't forget to install your node_modules before starting (`npm install`).
+## 📌 Description  
 
-### Development server
+**MDD Social Network**"*Monde de Dév*" est une plateforme permettant la gestion et la consultation d'articles IT classés par thèmes. Elle est développée en **Angular 18** pour le front-end et **Spring Boot 3** pour le back-end, avec une authentification **JWT** et une base de données **MySQL**.  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ce projet est un MVP et a été réalisé dans le cadre de la formation **Développeur Full-Stack Java Angular - OpenClassrooms**. Le repository original est : [https://github.com/OpenClassrooms-Student-Center/Developpez-une-application-full-stack-complete](https://github.com/OpenClassrooms-Student-Center/Developpez-une-application-full-stack-complete)
 
-### Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🛠️ Technologies utilisées  
 
-### Where to start
+- **Front-End** : Angular 18, Angular Material, RxJS  
+- **Back-End** : Java 21, Spring Boot 3, Spring Security, JWT  
+- **Base de Données** : MySQL 8  
+- **Outils** : Maven, Swagger UI, Bcrypt  
 
-As you may have seen if you already started the app, a simple home page containing a logo, a title and a button is available. If you take a look at its code (in the `home.component.html`) you will see that an external UI library is already configured in the project.
+---
 
-This library is `@angular/material`, it's one of the most famous in the angular ecosystem. As you can see on their docs (https://material.angular.io/), it contains a lot of highly customizable components that will help you design your interfaces quickly.
+## 🚀 Fonctionnalités principales  
 
-Note: I recommend to use material however it's not mandatory, if you prefer you can get ride of it.
+✅ **Authentification JWT** (inscription, connexion)  
+✅ **Gestion des utilisateurs** (profils, abonnements)  
+✅ **CRUD articles et thèmes**  
+✅ **Tri et filtres des articles** (date, auteur, thème)  
+✅ **Ajout de commentaires**   
+✅ **UI responsive avec Angular Material**  
+✅ **Documentation API avec Swagger-ui**  
 
-Good luck!
+🔜 **Améliorations à prévoir** : 
+
+- 🚀 Tests unitaires, intégration & E2E  
+- 🚀 Upload d'images pour les profils et articles 
+- 🚀 Gestion des articles anciens (pagination, archivage...)
+- 🚀 Gestion des commentaires (update, delete)
+- 🚀 Optimisation des performances & sécurité  
+
+---
+
+## 📂 Architecture  
+
+L'application suit une architecture modulaire **SPA (Single Page Application)** côté **Front** et **RESTful API** côté **Back**.
+
+---
+
+## 🔧 Installation & Configuration  
+
+📌 **Prérequis** :  
+- **Node.js 18+**, **Angular CLI 18+**
+- **Java 21**, **Maven 3.9+**, **MySQL 8**  
+
+### 📋 Cloner le projet  
+```bash
+git clone https://github.com/TangiLC/OC-P6_MDDNet.git
+```
+
+### 📥 Installation & Démarrage  
+L'installation et la mise en route détaillées sont disponibles dans les README dédiés :  
+
+📂 **Front-End** → [Installation & Lancement](front/README.md)  
+📂 **Back-End** → [Installation & Lancement](back/README.md)  
+
+---
+
+## 📖 Documentation API  
+
+L'API est documentée avec **Swagger UI**. Une fois le serveur lancé, accédez à :  
+🔗 **[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)**  
+
+---
+
+## 📚 Ressources utiles  
+
+| Documentation | Liens |
+|--------------|------|
+| Angular CLI | [Angular CLI Docs](https://angular.io/cli) |
+| RxJS | [RxJS Docs](https://rxjs.dev/) |
+| Spring Boot | [Spring Boot Docs](https://docs.spring.io/spring-boot/) |
+| JWT | [JWT.io](https://jwt.io/) |
+| Swagger | [Swagger UI](https://swagger.io/tools/swagger-ui/) |
+
+---
+
+## 📣 Notes  
+
+- Ce projet MVP est encore en développement et peut contenir des ajustements à venir.  
+- Toute contribution ou suggestion est la bienvenue !  
+
+---
+
+## 🎓 Merci pour votre intérêt ! 😊  

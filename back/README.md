@@ -26,7 +26,7 @@ La documentation de l'API est disponible via Swagger et inclut des endpoints sé
 ### 📋. Cloner le dépôt
 Clonez le projet depuis GitHub :
 ```bash
-git clone https://github.com/TangiLC/OC-P6_MDD.git
+git clone https://github.com/TangiLC/OC-P6_MDDNet.git
 ```
 
 ### 📥. Créer et importer la base de données
@@ -118,14 +118,14 @@ Routes protégées (nécessitent un token JWT)
 - **POST /theme** : Crée un nouveau thème.
 - **GET /theme/{id}** : Récupère les données du thème 'id'.
 - **PUT /theme/{id}** : Modifie les données du thème 'id'.
-- **DELETE /theme/{id}** : Supprime l'article 'id' de la bdd.
-- **GET /themes/** : Récupère la liste des thèmes existants dans la bdd.
+- **DELETE /theme/{id}** : Supprime le thème 'id' de la bdd.
+- **GET /themes** : Récupère la liste des thèmes existants dans la bdd.
 
 **COMMENTS**
-- **POST /comment** : Cré un nouveau commentaire.
+- **POST /comment** : Crée un nouveau commentaire.
 - **GET /comment/{id}** : Récupère les données du commentaire 'id'.
-- **PUT /comment/{id}** : Modifie les données du commentaire 'id'.
-- **DELETE /comment/{id}** : Supprime le commentaire 'id' de la bdd.
+- **PUT /comment/{id}** : Modifie les données du commentaire 'id'.[dev en cours]
+- **DELETE /comment/{id}** : Supprime le commentaire 'id' de la bdd.[dev en cours]
 - **GET /comment/by_author/{authorId}** : Récupère la liste des commentaires créés par 'authorId'.
 - **GET /comment/by_article/{articleId}** : Récupère la liste des articles associés à l'article 'articleId'.
 
@@ -134,7 +134,7 @@ Routes protégées (nécessitent un token JWT)
 
 ## 📣 Notes
 
-- Ce projet en phase de **développement** est une ébauche à compléter et tester avant production.
+- Ce projet en phase de **développement** est une ébauche MVP à compléter et tester avant production.
 
 ---
 

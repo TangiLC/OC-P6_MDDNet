@@ -24,7 +24,7 @@ Elle communique avec une **API REST sécurisée** développée en **Spring Boot*
 
 Clonez le projet depuis GitHub et accédez au dossier `front` :  
 ```bash
-git clone https://github.com/TangiLC/OC-P6_MDD.git
+git clone https://github.com/TangiLC/OC-P6_MDDNet.git
 cd front
 ```
 
