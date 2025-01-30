@@ -1,0 +1,15 @@
+.sort-form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+mat-form-field {
+  width: 180px;
+}
+
+mat-select {
+  font-size: 14px;
+}

@@ -1,0 +1,43 @@
+<div class="create-theme-container">
+  <mat-card>
+    <mat-card-title>
+      <ng-container *ngIf="isEditMode;else CreateTitle">
+        <div>Modifier un thème</div>
+        <div></div>
+        <button mat-raised-button color="warn" (click)="deleteTheme()">
+          <mat-icon>delete</mat-icon>Supprimer</button>
+      </ng-container>
+      <ng-template #CreateTitle>Créer un nouveau thème</ng-template>
+    </mat-card-title>
+    <form [formGroup]="themeForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Titre du thème</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" rows="5"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Couleur</mat-label>
+        <input matInput formControlName="color" type="color" />
+      </mat-form-field>
+      <div class="icon-container">
+        <mat-radio-group formControlName="icon" class="icon-grid">
+          <div *ngFor="let icon of icons" class="icon-item">
+            <mat-radio-button [value]="icon" (change)="selectIcon(icon)">
+              <img [src]="'./assets/themes/' + icon + '.png'" [alt]="icon">
+            </mat-radio-button>
+          </div>
+        </mat-radio-group>
+      </div>
+
+
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit" [disabled]="themeForm.invalid">
+          {{ isEditMode ? 'Mettre à jour' : 'Créer' }}
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,15 @@
+<mat-card class="comment-detail">
+  
+    <mat-card-title class="card-title">
+      
+        <img [src]="'/assets/profils/'+comment?.authorPicture+'.png'" [alt]="comment?.authorUsername"
+          class="author-picture" onerror="this.src='/assets/profils/default.png'" />
+        <span class="author-username">{{ comment?.authorUsername }}</span>
+      
+    </mat-card-title>
+  
+
+  <mat-card-content class="card-content">
+    <p>{{ comment?.content }}</p>
+  </mat-card-content>
+</mat-card>

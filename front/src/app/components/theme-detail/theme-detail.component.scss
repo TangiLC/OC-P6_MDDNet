@@ -1,0 +1,45 @@
+// theme-detail.component.scss
+.theme-detail {
+  margin: 1rem;
+  cursor:zoom-in;
+
+  .theme-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border: 1px solid #000;
+    border-radius: 3px;
+
+    .theme-icon {
+      width: 1.4rem;
+      height: 1.4rem;
+      object-fit: contain;
+    }
+  }
+
+  .theme-info {
+    height: 2.5rem;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.follow-actions {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.mat-transparent * {
+  opacity: 0;          
+  pointer-events: none;
+}

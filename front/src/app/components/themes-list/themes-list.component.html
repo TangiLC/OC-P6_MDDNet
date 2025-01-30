@@ -1,0 +1,22 @@
+<mat-card *ngIf="themes$ | async as themes" class="followed-themes-card">
+  <mat-card-header>
+    <mat-card-title class="themes-title"><ng-container *ngIf="isFullList; else followedTitle">
+        Liste des Thèmes
+      </ng-container>
+      <ng-template #followedTitle>
+        Abonnements ({{ themes.length }})
+      </ng-template></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="themes-grid" *ngIf="themes.length > 0; else noThemes">
+      <app-theme-detail *ngFor="let theme of themes" class="theme-card" [theme]="theme" [isFullView]="false"
+        (themeRefresh)="refreshThemes()" (click)="navigateToTheme(theme.id)" [ngClass]="{'clickable': true}">
+      </app-theme-detail>
+    </div>
+    <ng-template #noThemes>
+      <div class="no-themes-message">
+        <p>Aucun thème à afficher</p>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

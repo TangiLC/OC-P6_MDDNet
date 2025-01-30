@@ -1,0 +1,9 @@
+<div class="search-container">
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Rechercher un thème</mat-label>
+    <input matInput [formControl]="searchControl" placeholder="Recherche..." />
+    <mat-icon matPrefix>search</mat-icon>
+  </mat-form-field>
+</div>
+<app-themes-list [isFullList]="true" [searchQuery]="searchControl.value || ''">
+</app-themes-list>

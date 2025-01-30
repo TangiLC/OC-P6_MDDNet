@@ -1,0 +1,62 @@
+.comment-detail {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+}
+
+.card-content {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 6px;
+
+  p {
+   // width:100%;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0.2rem;
+    color: #555;
+  }
+}
+
+.card-title {
+  display: flex;
+  flex-direction: row;
+  margin: 0.2rem;
+}
+
+.author-picture {
+  object-fit: cover;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.1rem;
+  border-radius: 50%;
+  border: 2px solid grey;
+}
+
+.author-username {
+  align-items: center;
+  padding: 0.2rem;
+}
+
+@media screen and (max-width: 758px) {
+  .comment-detail {
+    flex-direction: column-reverse;
+  }
+  .card-title {
+    flex-direction: row-reverse;
+    align-self: end;
+  }
+  .card-content {
+    width: 90%;
+  }
+  .author-picture {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}

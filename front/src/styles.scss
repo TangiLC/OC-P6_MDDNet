@@ -1,0 +1,25 @@
+// Custom Theming for Angular Material
+@use "@angular/material" as mat;
+
+// Include the core styles for Angular Material.
+@include mat.core();
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+body {
+  margin: 0 auto;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+app-root {
+  margin:auto;
+  width: 100%;
+  max-width:1400px;
+}

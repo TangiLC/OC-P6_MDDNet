@@ -1,0 +1,36 @@
+<ng-container *ngIf="!(theme?.id==1)">
+  <mat-card class=" theme-detail" title="Voir la liste des articles de {{theme?.title}}">
+    <mat-card-title>
+      <div class="theme-header" [style.borderColor]="'#' + theme?.color">
+        <img [src]="'/assets/themes/'+theme?.icon+'.png'" [alt]="theme?.title" class="theme-icon"
+          onerror="this.src='/assets/themes/themeA.png'" />
+        {{ theme?.title }}
+
+      </div>
+    </mat-card-title>
+
+    <mat-card-subtitle>
+      <div class="theme-info">
+        {{ theme?.description }}
+      </div>
+
+      <div class="follow-actions">
+
+        <ng-container *ngIf="!isFollowing; else unfollowButton">
+          <button mat-raised-button color="primary" (click)="followTheme($event)">
+            <mat-icon>add_circle_outline</mat-icon>
+            S'abonner
+          </button>
+        </ng-container>
+        <ng-template #unfollowButton>
+          <button mat-raised-button color="accent" (click)="unfollowTheme($event)">
+            <mat-icon>remove_circle_outline</mat-icon>
+            Se désabonner
+          </button>
+        </ng-template>
+
+      </div>
+
+    </mat-card-subtitle>
+
+  </mat-card></ng-container>

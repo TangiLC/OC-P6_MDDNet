@@ -1,0 +1,10 @@
+<form [formGroup]="sortForm" (ngSubmit)="onSortChange()" class="sort-form">
+  <mat-form-field appearance="outline">
+    <mat-label>Trier par</mat-label>
+    <mat-select formControlName="sortBy" (selectionChange)="onSortChange()">
+      <mat-option *ngFor="let option of options" [value]="option.value">
+        <mat-icon>{{ option.icon }}</mat-icon>{{ option.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

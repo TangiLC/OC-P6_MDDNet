@@ -1,0 +1,17 @@
+.arrow {
+  position: absolute;
+  bottom: -2.5rem;
+  left:5%;
+  transform: translate(-50%, 0%);
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+}
+
+@media screen and (max-width: 758px) {
+ 
+}

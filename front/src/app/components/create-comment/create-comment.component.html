@@ -1,0 +1,19 @@
+<div class="create-comment">
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Ajouter un commentaire</mat-label>
+      <textarea matInput formControlName="content" placeholder="Écrivez ici votre commentaire..." rows="3"></textarea>
+      <mat-error *ngIf="commentForm.get('content')?.hasError('required') && commentForm.get('content')?.touched">
+        Le commentaire est requis.</mat-error>
+      <mat-error *ngIf="commentForm.get('content')?.hasError('minlength')&& commentForm.get('content')?.touched">
+        Le commentaire doit contenir au moins 3 caractères.
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" [disabled]="commentForm.invalid">
+      <mat-icon>send</mat-icon>
+    </button>
+
+  </form>
+</div>

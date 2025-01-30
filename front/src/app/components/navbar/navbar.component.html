@@ -1,0 +1,34 @@
+<div *ngIf="isNavbarHidden&&!isHomePage" class="nobar">
+  <span><img class="big-logo" src="/assets/logo_p6.png" alt="bigLogo" /></span>
+
+</div>
+
+
+<mat-toolbar *ngIf="!isNavbarHidden&&!isHomePage" class="navbar">
+  <app-back-arrow />
+  <span><img class="navbar-logo" src="/assets/logo_p6.png" alt="logo" /></span>
+
+  <span class="spacer"></span>
+  <ng-container *ngIf="isAuthenticated">
+    <button mat-icon-button class="menu-burger" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <div class="nav-items" [class.nav-items-open]="isMenuOpen">
+      <div class="nav-items-top">
+        <a mat-button (click)="navigateTo('/articles')"
+          [ngClass]="{'active-route': currentUrl.includes('article')}">Articles</a>
+        <a mat-button (click)="navigateTo('/themes')"
+          [ngClass]="{'active-route': currentUrl.includes('theme')}">Thèmes</a>
+      </div>
+      <div class="nav-items-bottom">
+
+        <a mat-button (click)="navigateTo('/profil')" [ngClass]="{'active-route': currentUrl==='/profil'}">
+          <img [src]="userPicture$ | async" alt="Profile picture" class="profile-picture" />
+        </a>
+      </div>
+    </div>
+
+  </ng-container>
+  <div class="overlay" [class.overlay-visible]="isMenuOpen" (click)="toggleMenu()"></div>
+</mat-toolbar>

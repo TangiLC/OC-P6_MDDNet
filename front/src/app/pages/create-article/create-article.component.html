@@ -1,0 +1,55 @@
+<div class="create-article-container">
+  <mat-card>
+    <mat-card-title>
+      <ng-container *ngIf="isEditMode;else CreateTitle">
+        <div>Modifier un article</div><div></div>
+        <button mat-raised-button color="warn" (click)="deleteArticle()">
+          <mat-icon>delete</mat-icon>Supprimer
+        </button>
+      </ng-container>
+      <ng-template #CreateTitle>Créer un nouvel article</ng-template>
+    </mat-card-title>
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Sélectionner au moins un thème</mat-label>
+        <mat-select formControlName="themeIds" multiple [compareWith]="compareThemes">
+          <mat-option *ngFor="let theme of (filteredThemes$ | async)" [value]="theme.id">
+            <span><img [src]="'/assets/themes/'+theme.icon+'.png'" alt="theme icon" class="theme-icon"
+                onerror="this.src='/assets/themes/themeA.png'" /></span>
+            <span>{{ theme.title }}</span>
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="articleForm.get('themeIds')?.hasError('required')">
+          Un thème minimum doit être défini
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Titre de l'article</mat-label>
+        <input matInput formControlName="title" />
+        <mat-error *ngIf="articleForm.get('title')?.hasError('required')">
+          Un titre non-null est nécessaire
+        </mat-error>
+        <mat-error *ngIf="articleForm.get('title')?.hasError('maxlength')">
+          La longueur du titre ne doit pas excéder 255 caractères
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contenu de l'article</mat-label>
+        <textarea matInput formControlName="content" rows="10"></textarea>
+        <mat-error *ngIf="articleForm.get('content')?.hasError('required')">
+          Un contenu est nécessaire
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit" [disabled]="articleForm.invalid">
+          {{ isEditMode ? 'Mettre à jour' : 'Créer' }}
+        </button>
+
+      </div>
+    </form>
+  </mat-card>
+</div>

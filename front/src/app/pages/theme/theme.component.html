@@ -1,0 +1,43 @@
+<div class="theme-container" *ngIf="theme$ | async as theme">
+  <header class="theme-header" [style.backgroundColor]="'#'+theme.color">
+    <div class="create-button">
+      <button mat-raised-button color="primary" (click)="navigateToCreateArticle(theme.id)">
+        Créer un article
+      </button>
+    </div>
+    <div class="theme-title">
+      <span><img [src]="'/assets/themes/'+theme.icon+'.png'" alt="theme icon" class="theme-icon"
+          onerror="this.src='/assets/themes/themeA.png'" /></span>
+      <span>
+        <h1>{{theme.title}}</h1>
+      </span>
+    </div>
+
+    <app-sort-form [options]="sortOptions" (sorted)="onSorted($event)"></app-sort-form>
+
+
+
+  </header>
+
+  <div class="theme-description">
+    <p>{{theme.description}}</p>
+  </div>
+
+  <div class="articles-grid">
+    <ng-container *ngIf="articles$ | async as articles; else loading">
+      <ng-container *ngIf="articles.length > 0; else noArticles">
+        <app-article-detail *ngFor="let article of sortedArticles" [article]="article" [isFullView]="false"
+          class="article-card" (click)="navigateToArticle(article.id)" [ngClass]="{'clickable': true}">
+        </app-article-detail></ng-container>
+      <ng-template #noArticles>
+        <p>Aucun article à afficher.</p>
+      </ng-template>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="loading-container">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+</ng-template>

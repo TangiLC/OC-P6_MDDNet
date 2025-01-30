@@ -1,0 +1,4 @@
+<div class="user-info-container" *ngIf="authService.userInfo$ | async as userInfo">
+  <app-user-profile></app-user-profile>
+  <app-themes-list [isFullList]="false"></app-themes-list>
+</div>
