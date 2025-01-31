@@ -1,35 +1,22 @@
 <mat-card *ngIf="userInfo" class="user-profile-card">
   <mat-card-header>
     <mat-card-title>Profil utilisateur</mat-card-title>
+
   </mat-card-header>
   <mat-card-content>
+    <div class="password"><button mat-raised-button color="accent" (click)="navigateToPasswordEdit()">
+      Changer de mot de passe
+    </button></div>
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Username</mat-label>
         <input matInput formControlName="username">
-        <!--<mat-error *ngIf="profileForm.get('username')?.errors?.['required']">
-            Username is required
-          </mat-error>
-          <mat-error
-            *ngIf="profileForm.get('username')?.errors?.['minlength'] || profileForm.get('username')?.errors?.['maxlength']">
-            Username must be between 3 and 30 characters
-          </mat-error>
-          <mat-error *ngIf="profileForm.get('username')?.errors?.['blank']">
-            Username cannot be blank
-          </mat-error>-->
+
       </mat-form-field>
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" type="email">
-        <!--<mat-error *ngIf="profileForm.get('email')?.errors?.['required']">
-            Email is required
-          </mat-error>
-          <mat-error *ngIf="profileForm.get('email')?.errors?.['email']">
-            Please enter a valid email address
-          </mat-error>
-          <mat-error *ngIf="profileForm.get('email')?.errors?.['maxlength']">
-            Email must not exceed 50 characters
-          </mat-error>-->
+
 
       </mat-form-field>
 
@@ -46,7 +33,7 @@
 
       <button mat-raised-button color="primary" type="submit" [disabled]="profileForm.invalid ||
                        (profileForm.value.username === userInfo.username &&
-                        profileForm.value.email === userInfo.email && 
+                        profileForm.value.email === userInfo.email &&
                         profileForm.value.picture === userInfo.picture)">
         Sauvegarder
       </button>

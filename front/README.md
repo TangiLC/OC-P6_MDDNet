@@ -95,24 +95,20 @@ L'application est une **single-page-application** avec **router**, qui suit une 
 ## 🚧 Fonctionnalités et évolutions  
 
 ### ✅ Fonctionnalités implémentées  
-✔️ Authentification avec JWT (connexion, inscription) 
-✔️ Gestion du profil utilisateur (username, email, abonnements)   
-✔️ Affichage des articles et filtres par thèmes  
-✔️ Gestion des articles (CRUD)  
-✔️ Outil de tri des articles (par date, titre, auteur)  
-✔️ Gestion des thèmes (CRUD)  
-✔️ Interface utilisateur responsive avec **Angular Material**  
+- ✔️ Authentification avec JWT (connexion, inscription) 
+- ✔️ Gestion du profil utilisateur (username, email, abonnements)   
+- ✔️ Affichage des articles et filtres par thèmes  
+- ✔️ Gestion des articles (CRUD)  
+- ✔️ Outil de tri des articles (par date, titre, auteur)  
+- ✔️ Gestion des thèmes (CRUD)  
+- ✔️ Interface utilisateur responsive avec **Angular Material**  
 
 ### 🔜 Améliorations à prévoir  
-🚀 **Ajout de tests** unitaires & E2E
-
-🚀 **Possibilité d'upload d'images** (profil et thèmes)
-
-🚀 **Gestion des commentaires** (Update, Delete)
-
-🚀 **Gestion du cleanup** des derniers articles à afficher
-
-🚀 **Mise en production & déploiement** (actuellement en mode dev)  
+- 🚀 **Ajout de tests** unitaires & E2E
+- 🚀 **Possibilité d'upload d'images** (profil et thèmes)
+- 🚀 **Gestion des commentaires** (Update, Delete)
+- 🚀 **Gestion du cleanup** des derniers articles à afficher
+- 🚀 **Mise en production & déploiement** (actuellement en mode dev)  
 
 
 ---

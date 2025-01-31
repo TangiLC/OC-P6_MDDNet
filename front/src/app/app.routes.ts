@@ -31,6 +31,14 @@ export const routes: Routes = [
     canActivate: [AuthGuard, ThemesGuard],
   },
   {
+    path: 'profil/password',
+    loadComponent: () =>
+      import('./components/user-password/user-password.component').then(
+        (m) => m.UserPasswordComponent
+      ),
+    canActivate: [AuthGuard, ThemesGuard],
+  },
+  {
     path: 'article/:id',
     loadComponent: () =>
       import('./pages/article/article.component').then(

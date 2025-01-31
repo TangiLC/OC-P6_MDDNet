@@ -20,6 +20,7 @@ import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
 import { UserInformation } from '../../interfaces/userInformation.interface';
 import { UpdateUserDto } from '../../interfaces/updateUserDto.interface';
+import { Router } from '@angular/router';
 
 export function notBlankValidator(): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
@@ -56,7 +57,8 @@ export class UserProfileComponent implements OnInit {
     private userService: UserService,
     public authService: AuthService,
     private fb: FormBuilder,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {
     this.profileForm = this.fb.group({
       username: [''],
@@ -98,10 +100,13 @@ export class UserProfileComponent implements OnInit {
             : null,
       };
 
-      if (updateDto.username !== null || updateDto.email !== null ||updateDto.picture !== null) {
+      if (
+        updateDto.username !== null ||
+        updateDto.email !== null ||
+        updateDto.picture !== null
+      ) {
         this.userService.updateUser(this.userInfo.id, updateDto).subscribe({
           next: () => {
-
             const noNullUpdate: Partial<UserInformation> = Object.fromEntries(
               Object.entries(updateDto).filter(([_, v]) => v !== null)
             );
@@ -119,5 +124,9 @@ export class UserProfileComponent implements OnInit {
         });
       }
     }
+  }
+
+  navigateToPasswordEdit(): void {
+    this.router.navigate(['/profil/password']);
   }
 }
