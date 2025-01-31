@@ -2,7 +2,7 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { ThemeDetailComponent } from '../theme-detail/theme-detail.component';
-import { Theme } from '../../interfaces/theme.interface';
+import { Theme } from '../../interfaces/themeDto.interface';
 import { ThemesService } from '../../services/theme.service';
 import { AuthService } from '../../services/auth.service';
 import { Observable, combineLatest, map } from 'rxjs';

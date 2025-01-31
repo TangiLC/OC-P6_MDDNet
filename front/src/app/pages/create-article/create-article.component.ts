@@ -15,11 +15,11 @@ import { ArticleService } from '../../services/article.service';
 import { ThemesService } from '../../services/theme.service';
 import { AuthService } from '../../services/auth.service';
 import { combineLatest, Observable, of } from 'rxjs';
-import { Theme } from '../../interfaces/theme.interface';
+import { Theme } from '../../interfaces/themeDto.interface';
 import { map, switchMap } from 'rxjs/operators';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { Article } from '../../interfaces/article.interface';
+import { Article } from '../../interfaces/articleDto.interface';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({

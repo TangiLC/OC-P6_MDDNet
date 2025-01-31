@@ -15,8 +15,8 @@ import {
 } from 'rxjs';
 import { ThemesService } from '../../services/theme.service';
 import { ArticleService } from '../../services/article.service';
-import { Theme } from '../../interfaces/theme.interface';
-import { Article } from '../../interfaces/article.interface';
+import { Theme } from '../../interfaces/themeDto.interface';
+import { Article } from '../../interfaces/articleDto.interface';
 import { ArticleDetailComponent } from '../../components/article-detail/article-detail.component';
 import { MatButtonModule } from '@angular/material/button';
 import { SortFormComponent } from '../../components/sort-form/sort-form.component';

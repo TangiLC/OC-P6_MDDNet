@@ -15,7 +15,7 @@ import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 import { UpdateUserDto } from '../../interfaces/updateUserDto.interface';
 import { catchError, of } from 'rxjs';
-import { UserInformation } from '../../interfaces/userInformation.interface';
+import { UserInformation } from '../../interfaces/userInformationDto.interface';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';

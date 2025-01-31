@@ -6,10 +6,10 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { ArticleService } from '../../services/article.service';
 import { ArticleDetailComponent } from '../../components/article-detail/article-detail.component';
 import { CommentDetailComponent } from '../../components/comment-detail/comment-detail.component';
-import { Article } from '../../interfaces/article.interface';
+import { Article } from '../../interfaces/articleDto.interface';
 import { CreateCommentComponent } from '../../components/create-comment/create-comment.component';
 import { AuthService } from '../../services/auth.service';
-import { UserInformation } from '../../interfaces/userInformation.interface';
+import { UserInformation } from '../../interfaces/userInformationDto.interface';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({

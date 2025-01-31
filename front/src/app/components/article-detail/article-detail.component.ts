@@ -5,7 +5,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemesService } from '../../services/theme.service';
 import { map, Observable, of } from 'rxjs';
-import { Theme } from '../../interfaces/theme.interface';
+import { Theme } from '../../interfaces/themeDto.interface';
 import { Router } from '@angular/router';
 
 @Component({

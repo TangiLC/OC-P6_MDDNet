@@ -1,8 +1,8 @@
 import { BehaviorSubject, Observable, switchMap, tap } from 'rxjs';
-import { LoginRequest } from '../interfaces/loginRequest.interface';
-import { LoginResponse } from '../interfaces/loginResponse.interface';
-import { UserInformation } from '../interfaces/userInformation.interface';
-import { RegisterRequest } from '../interfaces/registerRequest.interface';
+import { LoginRequest } from '../interfaces/loginRequestDto.interface';
+import { LoginResponse } from '../interfaces/loginResponseDto.interface';
+import { UserInformation } from '../interfaces/userInformationDto.interface';
+import { RegisterRequest } from '../interfaces/registerRequestDto.interface';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from './user.service';
 import { environment } from '../../environments/environment';

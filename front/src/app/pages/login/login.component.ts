@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BackArrowComponent } from '../../components/back-arrow/back-arrow.component';
 import { AuthService } from '../../services/auth.service';
-import { LoginRequest } from '../../interfaces/loginRequest.interface';
+import { LoginRequest } from '../../interfaces/loginRequestDto.interface';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { ThemesService } from '../../services/theme.service';

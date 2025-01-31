@@ -5,7 +5,7 @@ import { tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
 import { UpdateUserDto } from '../interfaces/updateUserDto.interface';
-import { UserInformation } from '../interfaces/userInformation.interface';
+import { UserInformation } from '../interfaces/userInformationDto.interface';
 
 @Injectable({
   providedIn: 'root',

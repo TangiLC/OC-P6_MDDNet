@@ -17,7 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { BackArrowComponent } from '../../components/back-arrow/back-arrow.component';
 import { AuthService } from '../../services/auth.service';
-import { RegisterRequest } from '../../interfaces/registerRequest.interface';
+import { RegisterRequest } from '../../interfaces/registerRequestDto.interface';
 import { catchError, EMPTY } from 'rxjs';
 
 @Component({

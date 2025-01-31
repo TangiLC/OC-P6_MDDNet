@@ -8,8 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class MddApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MddApiApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(MddApiApplication.class, args);
+  }
 }

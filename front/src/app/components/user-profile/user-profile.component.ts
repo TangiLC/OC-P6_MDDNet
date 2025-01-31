@@ -18,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
-import { UserInformation } from '../../interfaces/userInformation.interface';
+import { UserInformation } from '../../interfaces/userInformationDto.interface';
 import { UpdateUserDto } from '../../interfaces/updateUserDto.interface';
 import { Router } from '@angular/router';
 

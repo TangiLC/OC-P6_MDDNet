@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { CreateComment } from '../interfaces/createComment.interface';
+import { CreateComment } from '../interfaces/createCommentDto.interface';
 import { CommentDto } from '../interfaces/commentDto.interface';
 
 @Injectable({
