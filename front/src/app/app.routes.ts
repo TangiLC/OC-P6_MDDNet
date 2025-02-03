@@ -63,7 +63,7 @@ export const routes: Routes = [
   {
     path: 'articles',
     loadComponent: () =>
-      import('./pages/theme/theme.component').then((m) => m.ThemeComponent),
+      import('./pages/feed/feed.component').then((m) => m.FeedComponent),
     canActivate: [AuthGuard, ThemesGuard],
   },
   {

@@ -1,0 +1,24 @@
+<div class="feed-container">
+  <header class="feed-header">
+    <app-sort-form [options]="sortOptions" (sorted)="onSorted($event)"></app-sort-form>
+  </header>
+
+  <div class="articles-grid">
+    <ng-container *ngIf="articles$ | async as articles; else loading">
+      <ng-container *ngIf="articles.length > 0; else noArticles">
+        <app-article-detail *ngFor="let article of sortedArticles" [article]="article" [isFullView]="false"
+          class="article-card" (click)="navigateToArticle(article.id)" [ngClass]="{'clickable': true}">
+        </app-article-detail>
+      </ng-container>
+      <ng-template #noArticles>
+        <p>Aucun article à afficher.</p>
+      </ng-template>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="loading-container">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+</ng-template>
