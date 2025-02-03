@@ -6,9 +6,10 @@
 
 .feed-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 2rem;
 }
 
 .articles-grid {

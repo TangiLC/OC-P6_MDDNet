@@ -2,17 +2,18 @@
   <header class="feed-header">
     <app-sort-form [options]="sortOptions" (sorted)="onSorted($event)"></app-sort-form>
   </header>
-
+  <ng-container *ngIf="isFeedEmpty">
+    <div>Il n'y a pas de thèmes suivis. Voici les derniers articles publiés :</div>
+  </ng-container>
   <div class="articles-grid">
+
     <ng-container *ngIf="articles$ | async as articles; else loading">
-      <ng-container *ngIf="articles.length > 0; else noArticles">
-        <app-article-detail *ngFor="let article of sortedArticles" [article]="article" [isFullView]="false"
-          class="article-card" (click)="navigateToArticle(article.id)" [ngClass]="{'clickable': true}">
-        </app-article-detail>
-      </ng-container>
-      <ng-template #noArticles>
-        <p>Aucun article à afficher.</p>
-      </ng-template>
+
+      <app-article-detail *ngFor="let article of sortedArticles" [article]="article" [isFullView]="false"
+        class="article-card" (click)="navigateToArticle(article.id)" [ngClass]="{'clickable': true}">
+      </app-article-detail>
+
+
     </ng-container>
   </div>
 </div>

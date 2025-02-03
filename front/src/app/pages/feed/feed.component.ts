@@ -31,6 +31,7 @@ import { SortFormComponent } from '../../components/sort-form/sort-form.componen
 export class FeedComponent implements OnInit {
   articles$: Observable<Article[]> | undefined;
   isLoading = true;
+  isFeedEmpty = true;
   sortedArticles: Article[] = [];
 
   sortOptions = [
@@ -38,6 +39,7 @@ export class FeedComponent implements OnInit {
     { value: 'oldDate', label: 'Date (ancien)', icon: 'calendar_today' },
     { value: 'title', label: 'Titre', icon: 'title' },
     { value: 'author', label: 'Auteur', icon: 'person' },
+    { value: 'theme', label: 'Thème', icon: 'list_alt' },
   ];
 
   constructor(
@@ -48,15 +50,21 @@ export class FeedComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
+    this.isFeedEmpty = false;
+    this.sortedArticles = [];
     this.articles$ = this.authService.userInfo$.pipe(
       switchMap((userInfo) => {
         if (!userInfo?.themesSet || userInfo.themesSet.length === 0) {
-          return of([]);
+          this.isFeedEmpty = true;
         }
         return this.themesService.themes$.pipe(
-          map((themes) =>
-            themes.filter((theme) => userInfo.themesSet.includes(theme.id))
-          ),
+          map((themes) => {
+            const themeSet = userInfo?.themesSet?.length
+              ? userInfo.themesSet
+              : [1];
+            return themes.filter((theme) => themeSet.includes(theme.id));
+          }),
           switchMap((userThemes) => {
             const articleRequests = userThemes.flatMap((theme) =>
               theme.articleIds.map((id) =>
@@ -100,6 +108,11 @@ export class FeedComponent implements OnInit {
           return (
             new Date(a.updatedAt.replace(' ', 'T')).getTime() -
             new Date(b.updatedAt.replace(' ', 'T')).getTime()
+          );
+        case 'theme':
+          return (
+            (a.themeIds[0] !== 1 ? a.themeIds[0] : a.themeIds[1]) -
+            (b.themeIds[0] !== 1 ? b.themeIds[0] : b.themeIds[1])
           );
         default:
           return 0;
